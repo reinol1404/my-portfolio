@@ -14,51 +14,31 @@ const projects = [
     title: 'Web Pelatihan Diklat',
     description:
       'Website Portal untuk mengikuti pelatihan diklat.',
-    image: '/projects/task-management.jpg',
-    technologies: ['React', 'JavaScript'],
+    image: '/projects/webpelatihan.jpg',
+    technologies: ['laravel', 'Tailwind CSS'],
     demo: null,
-    github: null,
+    github: 'https://github.com/reinol14/web-pelatihan-diklat',
   },
   {
     id: 3,
-    title: 'Personal Finance',
+    title: 'Aplikasi Manajemen Toko',
     description:
-      'Aplikasi pencatatan keuangan untuk memantau pemasukan dan pengeluaran.',
-    image: '/projects/finance.jpg',
-    technologies: ['React', 'Tailwind CSS'],
+      'Aplikasi untuk mengelola data toko, termasuk stok, penjualan, dan pembelian.',
+    image: '/projects/toko.jpg',
+    technologies: ['Python', 'Tkinter'],
     demo: null,
     github: null,
   },
     {
     id: 4,
-    title: 'Website Silsilah',
+    title: 'Web Manajemen Katalog',
     description:
-      'Website untuk menampilkan dan mengelola silsilah keluarga.',
-    image: '/projects/silsilah.jpg',
-    technologies: ['Node.js', 'Tailwind CSS'],
-    demo: 'https://silsilahsimangunsong.site',
-    github: null,
-  },
-  {
-    id: 5,
-    title: 'Task Management App',
-    description:
-      'Aplikasi untuk mengelola tugas dengan fitur membuat, mengedit, menghapus, dan mengatur status tugas.',
-    image: '/projects/task-management.jpg',
-    technologies: ['React', 'JavaScript'],
+      'Website untuk mengelola katalog pelatihan diklat yang akan diselenggarakan.',
+    image: '/projects/katalogdiklat.jpg',
+    technologies: ['Laravel', 'Tailwind CSS'],
     demo: null,
     github: null,
   },
-  {
-    id: 6,
-    title: 'Personal Finance',
-    description:
-      'Aplikasi pencatatan keuangan untuk memantau pemasukan dan pengeluaran.',
-    image: '/projects/finance.jpg',
-    technologies: ['React', 'Tailwind CSS'],
-    demo: null,
-    github: null,
-  }
 ]
 
 export default projects

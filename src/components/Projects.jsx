@@ -1,8 +1,26 @@
+import { useEffect, useRef } from 'react'
 import Section from './ui/Section'
 import ProjectCard from './ProjectCard'
 import projects from '../data/projects'
 
 function Projects() {
+  const sliderRef = useRef(null)
+
+  useEffect(() => {
+    const slider = sliderRef.current
+
+    if (!slider) return
+
+    const interval = setInterval(() => {
+      slider.scrollBy({
+        left: 360,
+        behavior: 'smooth',
+      })
+    }, 3000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <Section id="projects">
 
@@ -13,21 +31,39 @@ function Projects() {
         </p>
 
         <h2 className="text-3xl font-bold sm:text-4xl">
-          Featured Projects
+          Selected <span className="text-blue-500">Works</span>
         </h2>
 
-        <p className="mt-4 max-w-2xl text-slate-400">
-          Beberapa project yang saya buat untuk menerapkan
-          teknologi dan mengembangkan kemampuan saya.
+        <p className="mt-4 max-w-2xl leading-relaxed text-slate-400">
+          Beberapa project yang saya kerjakan untuk menerapkan
+          kemampuan dan teknologi yang saya pelajari.
         </p>
       </div>
 
-      {/* Projects */}
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      {/* Slider */}
+      <div
+  ref={sliderRef}
+  className="flex items-stretch gap-6 overflow-x-auto pb-6"
+  style={{
+    scrollbarWidth: 'none',
+  }}
+>
+  {projects.map((project) => (
+    <div
+      key={project.id}
+      className="flex w-[320px] shrink-0"
+    >
+      <ProjectCard project={project} />
+    </div>
+  ))}
+</div>
+
+      {/* Indicator */}
+      <div className="mt-4 flex justify-center gap-2">
         {projects.map((project) => (
-          <ProjectCard
+          <span
             key={project.id}
-            project={project}
+            className="h-2 w-2 rounded-full bg-blue-500/40"
           />
         ))}
       </div>
